@@ -1,5 +1,5 @@
 import { Product } from "../../entities/Product";
-import { update, remove, findAll, ProductModel } from "../../models/ProductModel";
+import { update, remove, findAll, findActives, ProductModel } from "../../models/ProductModel";
 import { IProductRepository } from "../IProductRepository";
 
 export class MysqlProductRepository implements IProductRepository {
@@ -21,5 +21,9 @@ export class MysqlProductRepository implements IProductRepository {
 
     async delete(productId: number): Promise<void> {
         await remove(productId);
+    }
+
+    async listActives(): Promise<ProductModel[]> {
+        return await findActives();
     }
 }

@@ -10,7 +10,6 @@ export class UpdateProductUseCase {
 
     async execute(data: IUpdateProductDTO) {
         const product = new Product(data);
-        console.log(data);
         await this.productRepository.update(product);
     }
 }

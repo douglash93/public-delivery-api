@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { addProductController } from './useCases/AddProduct';
 import { listProductController } from './useCases/ListProduct';
+import { listProductBuyController } from './useCases/ListProductBuy';
 import { updateProductController } from './useCases/UpdateProduct';
 import { removeProductController } from './useCases/RemoveProduct';
 
@@ -20,6 +21,10 @@ router.put('/product', (request, response) => {
 
 router.delete('/product', (request, response) => {
     return removeProductController.handle(request, response);
+});
+
+router.get('/public/product', (request, response) => {
+    return listProductBuyController.handle(request, response);
 });
 
 export { router }

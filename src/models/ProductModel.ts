@@ -71,6 +71,14 @@ async function findAll() {
     return await ProductModel.findAll();
 }
 
+async function findActives() {
+    return await ProductModel.findAll({
+        where: {
+            status: true
+        }
+    });
+}
+
 async function remove(id) {
     return await ProductModel.destroy({
         where: {
@@ -87,4 +95,4 @@ async function update(product: Product) {
     });
 }
 
-export { ProductModel, findAll, remove, update }
+export { ProductModel, findAll, findActives, remove, update }
