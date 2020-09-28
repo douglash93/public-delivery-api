@@ -11,7 +11,7 @@ Funcionalides do projeto:
 
 O projeto foi desenvolvimento pensando em boas práticas, seguindo alguns dos príncipios SOLID, como por exemplo o Príncipio de responsabilidade única e príncipio da inversão de dependência.
 
-Para os testes foi utilizado o **jest**.
+Para os testes de integração foi utilizado o **jest**.
 
 ## Passos para executar o projeto 
 
@@ -27,3 +27,6 @@ Para os testes foi utilizado o **jest**.
 
         yarn sequelize db:migrate
 
+4. Executar testes de integração 
+
+        yarn jest
