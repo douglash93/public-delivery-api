@@ -12,3 +12,18 @@ Funcionalides do projeto:
 O projeto foi desenvolvimento pensando em boas práticas, seguindo alguns dos príncipios SOLID, como por exemplo o Príncipio de responsabilidade única e príncipio da inversão de dependência.
 
 Para os testes foi utilizado o **jest**.
+
+## Passos para executar o projeto 
+
+1. Instalar as dependências do projeto 
+
+        yarn install
+
+2. Criar o banco de dados no mysql, delivery-api 
+
+        create database delivery_api
+
+3. Executar o comando 
+
+        yarn sequelize db:migrate
+
