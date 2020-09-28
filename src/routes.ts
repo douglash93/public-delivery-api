@@ -4,6 +4,7 @@ import { listProductController } from './useCases/ListProduct';
 import { listProductBuyController } from './useCases/ListProductBuy';
 import { updateProductController } from './useCases/UpdateProduct';
 import { removeProductController } from './useCases/RemoveProduct';
+import { addProductToCartController } from './useCases/AddProductToCart';
 
 const router = Router();
 
@@ -25,6 +26,10 @@ router.delete('/product', (request, response) => {
 
 router.get('/public/product', (request, response) => {
     return listProductBuyController.handle(request, response);
+});
+
+router.post('/public/cart', (request, response) => {
+    return addProductToCartController.handle(request, response);
 });
 
 export { router }
