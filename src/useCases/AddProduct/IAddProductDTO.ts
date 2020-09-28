@@ -1,5 +1,4 @@
-export interface IListProductDTO {
-    id: number;
+export interface IAddProductDTO {
     name: string;
     description: string;
     price: number;
