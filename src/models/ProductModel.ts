@@ -5,6 +5,7 @@ import {
   } from "sequelize";
 
 import { sequelize } from "../config/database";
+import { Product } from "../entities/Product";
 
 class ProductModel extends Model {
     id!: string;
@@ -35,7 +36,7 @@ ProductModel.init(
             allowNull: true
         },
         price: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false
         },
         image: {
@@ -70,4 +71,20 @@ async function findAll() {
     return await ProductModel.findAll();
 }
 
-export { ProductModel, findAll }
+async function remove(id) {
+    return await ProductModel.destroy({
+        where: {
+            id: id
+        }
+    });
+}
+
+async function update(product: Product) {
+    return await ProductModel.update(product, {
+        where: {
+            id: product.id
+        }
+    });
+}
+
+export { ProductModel, findAll, remove, update }
