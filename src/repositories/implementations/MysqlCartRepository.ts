@@ -10,13 +10,13 @@ export class MysqlCartRepository implements ICartRepository {
         const cartProductModel = new CartProductModel();
         Object.assign(cartProductModel, toCart);
         const result = await cartProductModel.save();
-        return parseInt(result.id);
+        return result.cart_id;
     }
 
     async add(cart: Cart): Promise<number> {
         const cartModel = new CartModel();
         Object.assign(cartModel, cart);
         const result = await cartModel.save();
-        return parseInt(result.id);
+        return result.id;
     }
 }

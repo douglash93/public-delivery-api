@@ -1,7 +1,7 @@
 import { CartProduct } from "../../entities/CartProduct";
 import { getExistsCart } from "../../models/CartModel";
 import { ICartRepository } from "../../repositories/ICartRepository";
-import { IAddProductToCartDTO } from "./IAddProductToCart";
+import { IAddProductToCartDTO } from "./IAddProductToCartDTO";
 
 export class AddProductToCartUseCase {
 

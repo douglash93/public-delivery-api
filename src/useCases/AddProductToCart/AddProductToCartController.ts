@@ -12,6 +12,7 @@ export class AddProductToCartController {
     try {
 
         const cartId = await this.addProductToCartUseCase.execute({
+            user_id: 1, // fixado para testes,
             cart_id: cart_id,
             product_id: product_id,
             quantity: quantity

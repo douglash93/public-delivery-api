@@ -5,16 +5,15 @@ import {
   } from "sequelize";
 
 import { sequelize } from "../config/database";
-import { Cart } from "../entities/Cart";
 
-class CartModel extends Model {
+class UserModel extends Model {
     id!: number;
-    user_id!: string;
+    name: string;
     created_at!: Date;
     updated_at: Date;
 }
 
-CartModel.init(
+UserModel.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -22,10 +21,10 @@ CartModel.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // userId: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         created_at: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -38,21 +37,8 @@ CartModel.init(
     },
     {
         sequelize, 
-        tableName: 'cart'
+        tableName: 'user'
     }
 );
 
-async function add(cart: Cart): Promise<number> {
-    const result = await CartModel.create(cart);
-    return result.id;
-}
-
-async function getExistsCart(): Promise<number> {
-    const result = await CartModel.findOne();
-    if(result) {
-        return result.id;
-    }
-    return null;
-}
-
-export { CartModel, add, getExistsCart }
+export { UserModel }

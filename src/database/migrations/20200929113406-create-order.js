@@ -2,20 +2,12 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return await queryInterface.createTable('CartProduct', {
+    return await queryInterface.createTable('Order', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
-      },
-      cart_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'cart',
-          key: 'id'
-        }
       },
       user_id: {
         type: Sequelize.INTEGER,
@@ -25,16 +17,20 @@ module.exports = {
           key: 'id'
         }
       },
-      product_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'product',
-          key: 'id'
-        }
+      payment_type: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      quantity: {
-        type: Sequelize.INTEGER,
+      address: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      price: {
+        type: Sequelize.DECIMAL(10,2),
+        allowNull: false
+      },
+      status: {
+        type: Sequelize.STRING,
         allowNull: false
       },
       created_at: {
@@ -49,6 +45,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('CartProduct');
+    return queryInterface.dropTable('Order');
   }
 };

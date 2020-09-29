@@ -27,6 +27,10 @@ Para os testes de integração foi utilizado o **jest**.
 
         yarn sequelize db:migrate
 
+4. Executar o comando 
+
+        yarn sequelize db:seed:all
+
 4. Executar testes de integração 
 
         yarn jest
