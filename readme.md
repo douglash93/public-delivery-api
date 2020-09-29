@@ -2,7 +2,7 @@
 
 A estrutura do projeto segue a arquitetura **package-by-feature**. Para saber mais: https://phauer.com/2020/package-by-feature/
 
-Funcionalides do projeto: 
+Funcionalidades do projeto: 
 
 * Criar, listar, atualizar e remover produtos.
 * Listagem de produtos para compra.
